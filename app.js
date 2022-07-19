@@ -1,6 +1,6 @@
 'use strict';
 
-let hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 am', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm'];
+let hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 am', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
 
 let Seattle = {
   name: 'Seattle',
@@ -198,3 +198,5 @@ LimaGroup.appendChild(Header5);
 let LimaList = document.createElement('ul');
 LimaGroup.appendChild(LimaList);
 Lima.render(LimaList);
+
+console.log(Seattle);
