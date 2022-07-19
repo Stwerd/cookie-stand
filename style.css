@@ -1,0 +1,49 @@
+body{
+  position:static;
+  font-size:15px;
+  display:inline;
+  background-color: #C0DFA1;
+}
+#topbar > *{
+  margin-right:10%;
+  margin-left:10%;
+
+}
+#topbar{
+  margin-right:5%;
+  margin-left:5%;
+  box-sizing: border-box;
+  height: 100px;
+  width: 90%;
+  position: fixed;
+  background-color: #011936;
+  font-size:3rem;
+  border: 2px black solid;
+}
+article:nth-child(odd) {
+  display:inline-block;
+  width:45%;
+}
+article:nth-child(even){
+  width:45%;
+  display:inline-block;
+}
+article{
+  font-size: 20px;
+  margin:20px;
+  padding:5px;
+  border: 2px black solid;
+  background-color: #82A3A1;
+}
+
+h2{
+  padding: 100px;
+}
+h3{
+  font-weight: 700;
+  font-size:25px;
+}
+h1{
+  font-weight: 700;
+  font-size: 50px;
+}
