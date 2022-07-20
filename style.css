@@ -2,7 +2,7 @@ body{
   position:static;
   font-size:15px;
   display:inline;
-  background-color: #C0DFA1;
+  background-color: #fff;
 }
 #topbar > *{
   margin-right:10%;
@@ -20,15 +20,10 @@ body{
   font-size:3rem;
   border: 2px black solid;
 }
-article:nth-child(odd) {
-  display:inline-block;
-  width:45%;
-}
-article:nth-child(even){
+.Store-sales{
+  box-sizing:border-box;
   width:45%;
   display:inline-block;
-}
-article{
   font-size: 20px;
   margin:20px;
   padding:5px;
@@ -46,4 +41,32 @@ h3{
 h1{
   font-weight: 700;
   font-size: 50px;
+}
+#sales > *#TableBody, thead{
+  border: 1px black solid;
+}
+#sales{
+  margin: 1rem;
+  padding:10px;
+}
+#sales > *{
+  text-align:center;
+}
+td{
+  padding:5px 10px 5px 10px;
+  border:black 1px solid;
+}
+tfoot{
+  border:black 1px solid;
+}
+header, #footer{
+  font-size: 30px;
+  text-align: center;
+}
+#footer{
+  width:65%;
+  margin:0 20% 0 20%;
+  position:fixed;
+  bottom:0;
+  border:0px solid white;
 }

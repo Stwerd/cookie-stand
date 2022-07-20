@@ -4,12 +4,15 @@
 <head>
   <title>Cookie Stand</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href ="reset.css">
-  <link rel="stylesheet" href ="style.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <main>
+    <header>
+      Salmon Cookies Incorporated
+    </header>
     <article id="topbar">
       <a href="index.html">Home Page</a>
       <a href="sales.html">Sales Chart</a>
@@ -17,8 +20,36 @@
         height="50">
     </article>
     <h2></h2>
-    <h1> Sales Page</h1>
+    <table id = 'sales'>
+      <thead>
+        <tr id="TableHead">
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody id='TableBody'>
+      </tbody>
+      <tfoot>
+        <tr id="Total">
+        </tr>
+      </tfoot>
+    </table>
   </main>
+  <div id="footer">
+    <table>
+      <thead>
+        <td>About Us</td>
+        <td>Customer Service</td>
+        <td>Contact Us</td>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Our Story</td>
+          <td>Email</td>
+          <td>Reach Us Here for Questions</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <script src="app.js"></script>
 </body>
 
