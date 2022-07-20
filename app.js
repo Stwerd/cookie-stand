@@ -31,6 +31,7 @@ Location.prototype.cookiesSales = function () {
 };
 
 Location.prototype.render = function () {
+  this.cookiesSales();
   //render stored data as li's
   let tr = document.createElement('tr');
   tbody.appendChild(tr);
@@ -77,23 +78,18 @@ let footRender = function() {
 headRender(hours);
 
 let seattle = new Location('Seattle', 23, 65, 6.3);
-seattle.cookiesSales();
 seattle.render();
 
 let tokyo = new Location('Tokyo', 3, 24, 1.2);
-tokyo.cookiesSales();
 tokyo.render();
 
 let paris = new Location('Paris', 20, 28, 2.3);
-paris.cookiesSales();
 paris.render();
 
 let dubai = new Location('Dubai', 11, 38, 3.7);
-dubai.cookiesSales();
 dubai.render();
 
 let lima = new Location('Lima', 2, 16, 4.8);
-lima.cookiesSales();
 lima.render();
 
 footRender();
