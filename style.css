@@ -53,7 +53,6 @@ header{
   box-sizing: border-box;
 }
 header nav{
-  padding:10px 0 10px 0;
   margin:auto;
   width: 960px;
   display:flex;
@@ -66,7 +65,7 @@ ul{
   width:760px;
 }
 li{
-  margin: 20px 25px 0 25px;
+  margin: 20px 5px 0 5px;
   font-size: 25px;
   color:grey;
 }
@@ -94,7 +93,7 @@ main div article div{
   overflow:auto;
   height:375px;
 }
-img{
+main img{
   border:1px black solid;
 }
 main div:first-child img{
