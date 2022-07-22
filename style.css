@@ -139,3 +139,7 @@ legend{
   font-weight: 700;
   font-size:30px;
 }
+form{
+  border:1px solid black;
+  width:60%;
+}
