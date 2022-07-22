@@ -6,6 +6,8 @@ let tbody = document.getElementById('TableBody');
 let thead = document.getElementById('TableHead');
 let tfoot = document.getElementById('Total');
 let everySingleCookie = 0;
+let custFlow = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
+let TosserHead = document.getElementById('TosserHead');
 
 function Location(name, min, max, avg) {
   this.name = name;
@@ -14,6 +16,7 @@ function Location(name, min, max, avg) {
   this.avg = avg;
   this.cookiesArray = [];
   this.dailyTotal = 0;
+  this.custToTosser = [];
 }
 
 Location.prototype.randCustomer = function () {
@@ -21,17 +24,45 @@ Location.prototype.randCustomer = function () {
 };
 
 Location.prototype.cookiesSales = function () {
-
   for (let i = 0; i < hours.length; i++) {
     let custThisHour = this.randCustomer();
-    let cookiesalesThisHour = Math.ceil(custThisHour * this.avg);
+    //Just added the flow array that adds in the slowest and busiest times.
+    let cookiesalesThisHour = Math.ceil(custThisHour * (custFlow[i] * this.avg));
     this.cookiesArray.push(cookiesalesThisHour);
     this.dailyTotal += cookiesalesThisHour;
+
+    this.custToTosser.push(cookiesalesThisHour);
+  }
+};
+Location.prototype.tosser = function () {
+  for (let i = 0; i < 14; i++) {
+    let tossed = 0;
+    while (this.custToTosser[i] > 0) {
+      this.custToTosser[i] -= 20;
+      tossed++;
+    }
+    if (tossed < 2) {
+      this.custToTosser[i] = 2;
+    }
+    else {
+      this.custToTosser[i] = tossed;
+    }
+  }
+};
+Location.prototype.appendTossers = function () {
+  let tr = document.createElement('tr');
+  TosserHead.appendChild(tr);
+  for (let z = 0; z < hours.length; z++) {
+    let td = document.createElement('td');
+    td.textContent = `${this.custToTosser[z]} Tossers`;
+    tr.appendChild(td);
   }
 };
 
 Location.prototype.render = function () {
   this.cookiesSales();
+  this.tosser();
+  this.appendTossers();
   //render stored data as li's
   let tr = document.createElement('tr');
   tbody.appendChild(tr);
@@ -49,7 +80,6 @@ Location.prototype.render = function () {
   totalLi.textContent = `${this.dailyTotal} Cookies`;
   tr.appendChild(totalLi);
 };
-
 let headRender = function (list) {
   for (let i = 0; i < list.length; i++) {
     let td = document.createElement('td');
@@ -74,6 +104,22 @@ let footRender = function () {
   last1.textContent = `We sold ${everySingleCookie} Cookies's Today!`;
   tfoot.appendChild(last1);
 };
+
+//I'll be creating a window into the DOM
+
+let form = document.getElementById('formid');
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let newLocation = event.target.newLocation.value;
+  let min = event.target.newmin.value;
+  let max = event.target.newmax.value;
+  let avg = event.target.newavg.value;
+  let newCity = new Location(newLocation, min, max, avg);
+  newCity.render();
+}
+form.addEventListener('submit', handleSubmit);
+
 
 headRender(hours);
 
