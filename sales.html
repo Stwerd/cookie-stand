@@ -11,17 +11,36 @@
 <body>
   <header>
     <nav>
-      <img src="https://place-hold.it/200x70/ddd" />
+      <img src="https://github.com/codefellows/seattle-code-201d94/blob/main/class-08/lab-b/assets/chinook.jpg?raw=true" width="200px" height="70px" />
       <ul>
         <li><a href="index.html">Home Page</a></li>
         <li><a href="sales.html">Sales Page</a></li>
-        <li>Nav 3</li>
-        <li>Nav 4</li>
+        <li>Store</li>
+        <li>Ordering Processing</li>
       </ul>
     </nav>
   </header>
   <main>
-
+    <form id="formid">
+      <legend>Create a new store projection</legend>
+      <label>New Location</label>
+      <input type="text" name="newLocation" placeholder="ex. Cairo">
+      </label>
+      <fieldset>
+        <legend>The Numbers
+        </legend>
+        <label>Minimum Customers from the new location
+          <input type="int" name="newmin" placeholder="123...">
+        </label><br>
+        <label>Maximum customers per hour from new location
+          <input type="int" name="newmax" placeholder="123...">
+        </label><br>
+        <label>Ave cookies purchased by each customer
+          <input type="int" name="newavg" placeholder="123...">
+        </label>
+        <button type='submit' id = 'submit1'>Submit Form</button>
+      </fieldset>
+    </form>
     <table id='sales'>
       <thead>
         <tr id="TableHead">
@@ -35,6 +54,10 @@
         </tr>
       </tfoot>
     </table>
+    <table id = 'tosser'>
+      <thead id ='TosserHead'>
+      </thead>
+    </table>
   </main>
   <footer>
     <div>
@@ -43,15 +66,16 @@
         912312 Seattle, Wa
       </p>
       <p>
-      Store Hours <br>
-      Monday - Friday : 10am - 4pm<br>
-      Saturday: 12pm - 6pm<br>
-      Sunday: Closed
-    </p>
-    <p>Questions, Comments?<br>
-      <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjq0qjmvIr5AhWNCDQIHcLgACAQwqsBegQIAhAB&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU">Email</a><br>
-      253-987-4689
-    </p>
+        Store Hours <br>
+        Monday - Friday : 10am - 4pm<br>
+        Saturday: 12pm - 6pm<br>
+        Sunday: Closed
+      </p>
+      <p>Questions, Comments?<br>
+        <a
+          href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjq0qjmvIr5AhWNCDQIHcLgACAQwqsBegQIAhAB&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU">Email</a><br>
+        253-987-4689
+      </p>
     </div>
   </footer>
   <script src="app.js"></script>
