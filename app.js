@@ -7,7 +7,8 @@ let thead = document.getElementById('TableHead');
 let tfoot = document.getElementById('Total');
 let everySingleCookie = 0;
 let custFlow = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
-let TosserHead = document.getElementById('TosserHead');
+let TosserHead = document.getElementById('TosserBody');
+let TosserHeader = document.getElementById('TosserHeader');
 
 function Location(name, min, max, avg) {
   this.name = name;
@@ -25,9 +26,9 @@ Location.prototype.randCustomer = function () {
 
 Location.prototype.cookiesSales = function () {
   for (let i = 0; i < hours.length; i++) {
-    let custThisHour = this.randCustomer();
+    let custThisHour = custFlow[i] * this.randCustomer();
     //Just added the flow array that adds in the slowest and busiest times.
-    let cookiesalesThisHour = Math.ceil(custThisHour * (custFlow[i] * this.avg));
+    let cookiesalesThisHour = Math.ceil(custThisHour * this.avg);
     this.cookiesArray.push(cookiesalesThisHour);
     this.dailyTotal += cookiesalesThisHour;
 
@@ -52,6 +53,9 @@ Location.prototype.tosser = function () {
 Location.prototype.appendTossers = function () {
   let tr = document.createElement('tr');
   TosserHead.appendChild(tr);
+  let td = document.createElement('td');
+  td.textContent = `${this.name}`;
+  tr.appendChild(td);
   for (let z = 0; z < hours.length; z++) {
     let td = document.createElement('td');
     td.textContent = `${this.custToTosser[z]} Tossers`;
@@ -80,8 +84,8 @@ Location.prototype.render = function () {
   totalLi.textContent = `${this.dailyTotal} Cookies`;
   tr.appendChild(totalLi);
 };
-let headRender = function (list) {
-  for (let i = 0; i < list.length; i++) {
+let headRender = function () {
+  for (let i = 0; i < hours.length; i++) {
     let td = document.createElement('td');
     td.textContent = hours[i];
     thead.appendChild(td);
@@ -104,7 +108,16 @@ let footRender = function () {
   last1.textContent = `We sold ${everySingleCookie} Cookies's Today!`;
   tfoot.appendChild(last1);
 };
-
+let TossHeadRender = function () {
+  let td = document.createElement('td');
+  td.textContent = `Time`;
+  TosserHeader.appendChild(td);
+  for (let i = 0; i < hours.length; i++) {
+    let td = document.createElement('td');
+    td.textContent = hours[i];
+    TosserHeader.appendChild(td);
+  }
+};
 //I'll be creating a window into the DOM
 
 let form = document.getElementById('formid');
@@ -121,7 +134,7 @@ function handleSubmit(event) {
 form.addEventListener('submit', handleSubmit);
 
 
-headRender(hours);
+headRender();
 
 let seattle = new Location('Seattle', 23, 65, 6.3);
 seattle.render();
@@ -139,3 +152,5 @@ let lima = new Location('Lima', 2, 16, 4.8);
 lima.render();
 
 footRender();
+
+TossHeadRender();

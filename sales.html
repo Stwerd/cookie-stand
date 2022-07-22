@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lan="en">
+<html lang="en">
 
 <head>
   <title>Cookie Stand</title>
@@ -11,35 +11,35 @@
 <body>
   <header>
     <nav>
-      <img src="https://github.com/codefellows/seattle-code-201d94/blob/main/class-08/lab-b/assets/chinook.jpg?raw=true" width="200px" height="70px" />
+      <img src="https://github.com/codefellows/seattle-code-201d94/blob/main/class-08/lab-b/assets/chinook.jpg?raw=true" width="200" height="70" alt="salmon"/>
       <ul>
         <li><a href="index.html">Home Page</a></li>
         <li><a href="sales.html">Sales Page</a></li>
-        <li><a href ="https://www.youtube.com/watch?v=Yb6dZ1IFlKc">Store</a></li>
+        <li><a href="https://www.youtube.com/watch?v=Yb6dZ1IFlKc">Store</a></li>
         <li>Ordering Processing</li>
       </ul>
-      <img src="https://github.com/codefellows/seattle-code-201d94/blob/main/class-08/lab-b/assets/salmon.png?raw=true" height="70px" width="200px">
+      <img src="https://github.com/codefellows/seattle-code-201d94/blob/main/class-08/lab-b/assets/salmon.png?raw=true" height="70" width="200" alt = "salmon">
     </nav>
   </header>
   <main>
     <form id="formid">
-      <legend>Create a new store projection</legend>
-      <label>New Location</label>
-      <input type="text" name="newLocation" placeholder="ex. Cairo">
+      <h3>Create a new store projection</h3>
+      <label>New Location
+        <input type="text" name="newLocation" placeholder="ex. Cairo">
       </label>
       <fieldset>
         <legend>The Numbers
         </legend>
         <label>Minimum Customers from the new location
-          <input type="int" name="newmin" placeholder="123...">
+          <input type="number" name="newmin" placeholder="123...">
         </label><br>
         <label>Maximum customers per hour from new location
-          <input type="int" name="newmax" placeholder="123...">
+          <input type="number" name="newmax" placeholder="123...">
         </label><br>
         <label>Ave cookies purchased by each customer
-          <input type="int" name="newavg" placeholder="123...">
+          <input type="number" name="newavg" placeholder="123...">
         </label>
-        <button type='submit' id = 'submit1'>Submit Form</button>
+        <button type='submit' id='submit1'>Submit Form</button>
       </fieldset>
     </form>
     <table id='sales'>
@@ -51,13 +51,16 @@
       <tbody id='TableBody'>
       </tbody>
       <tfoot>
-        <tr id="Total">
-        </tr>
+        <tr id="Total"></tr>
       </tfoot>
     </table>
-    <table id = 'tosser'>
-      <thead id ='TosserHead'>
+    <table id='tosser'>
+      <h4>How many tossers you need per hour?</h4>
+      <thead id="TosserHeader">
+        
       </thead>
+      <tbody id='TosserBody'>
+      </tbody>
     </table>
   </main>
   <footer>
