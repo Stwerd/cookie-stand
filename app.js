@@ -80,18 +80,6 @@ Location.prototype.render = function () {
   totalLi.textContent = `${this.dailyTotal} Cookies`;
   tr.appendChild(totalLi);
 };
-
-
-
-
-
-
-
-
-
-
-
-
 let headRender = function (list) {
   for (let i = 0; i < list.length; i++) {
     let td = document.createElement('td');
