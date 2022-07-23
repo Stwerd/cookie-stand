@@ -52,6 +52,9 @@ Location.prototype.tosser = function () {
 Location.prototype.appendTossers = function () {
   let tr = document.createElement('tr');
   TosserHead.appendChild(tr);
+  let tname = document.createElement('td');
+  tname.textContent = this.name;
+  tr.appendChild(tname);
   for (let z = 0; z < hours.length; z++) {
     let td = document.createElement('td');
     td.textContent = `${this.custToTosser[z]} Tossers`;
